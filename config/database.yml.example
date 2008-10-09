@@ -1,0 +1,20 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  database: auctoritas_development
+  username: root
+  password:
+
+test:
+  adapter: mysql
+  encoding: utf8
+  database: auctoritas_test
+  username: root
+  password:
+
+production:
+  adapter: mysql
+  encoding: utf8
+  database: auctoritas_production
+  username: root
+  password: 
