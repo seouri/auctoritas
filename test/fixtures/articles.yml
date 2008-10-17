@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  journal: MyString
+  year: 1
+  volume: MyString
+  issue: MyString
+  pagination: MyString
+  title: MyString
+
+two:
+  journal: MyString
+  year: 1
+  volume: MyString
+  issue: MyString
+  pagination: MyString
+  title: MyString
