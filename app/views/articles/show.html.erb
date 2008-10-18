@@ -1,33 +1,4 @@
-<p>
-  <b>Journal:</b>
-  <%=h @article.journal %>
-</p>
+<h1><%= @article.title %></h1>
+<%= citation(@article) %>
 
-<p>
-  <b>Year:</b>
-  <%=h @article.year %>
-</p>
-
-<p>
-  <b>Volume:</b>
-  <%=h @article.volume %>
-</p>
-
-<p>
-  <b>Issue:</b>
-  <%=h @article.issue %>
-</p>
-
-<p>
-  <b>Pagination:</b>
-  <%=h @article.pagination %>
-</p>
-
-<p>
-  <b>Title:</b>
-  <%=h @article.title %>
-</p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
