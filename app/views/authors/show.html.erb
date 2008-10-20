@@ -1,0 +1,14 @@
+<h1><%= @author.full_name %></h1>
+
+<h2>Articles</h2>
+
+<ul>
+<% for authorship in @author.authorships -%>
+  <li><%= link_to authorship.article.title, authorship.article %></li>
+<% end -%>
+</ul>
+
+<%= timestamps(@author) %>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>

@@ -1,0 +1,11 @@
+<h1>Authors</h1>
+
+<ul>
+<% for author in @authors -%>
+  <li><%= link_to author.full_name, author %></li>
+<% end -%>
+</ul>
+
+<div class="pagination">
+<%= will_paginate @authors %>
+</div>

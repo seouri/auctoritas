@@ -1,0 +1,28 @@
+<h1>Editing author</h1>
+
+<% form_for(@author) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :fore_name %><br />
+    <%= f.text_field :fore_name %>
+  </p>
+  <p>
+    <%= f.label :initials %><br />
+    <%= f.text_field :initials %>
+  </p>
+  <p>
+    <%= f.label :suffix %><br />
+    <%= f.text_field :suffix %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @author %> |
+<%= link_to 'Back', authors_path %>

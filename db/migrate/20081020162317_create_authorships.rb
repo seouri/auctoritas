@@ -11,6 +11,7 @@ class CreateAuthorships < ActiveRecord::Migration
       t.timestamps
     end
     add_index :authorships, :article_id
+    add_index :authorships, :author_id
   end
 
   def self.down
