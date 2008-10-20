@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081020183201) do
+ActiveRecord::Schema.define(:version => 20081020220029) do
 
   create_table "articles", :force => true do |t|
     t.string   "journal"
@@ -46,5 +46,13 @@ ActiveRecord::Schema.define(:version => 20081020183201) do
 
   add_index "authorships", ["article_id"], :name => "index_authorships_on_article_id"
   add_index "authorships", ["author_id"], :name => "index_authorships_on_author_id"
+
+  create_table "coauthorships", :force => true do |t|
+    t.integer "author_id"
+    t.integer "coauthor_id"
+    t.integer "articles_count"
+  end
+
+  add_index "coauthorships", ["author_id"], :name => "index_coauthorships_on_author_id"
 
 end

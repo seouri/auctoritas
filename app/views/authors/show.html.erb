@@ -2,12 +2,38 @@
 
 <h2>Articles</h2>
 
-<ul>
+<ol>
 <% for authorship in @author.authorships -%>
   <li><%= link_to authorship.article.title, authorship.article %></li>
 <% end -%>
-</ul>
+</ol>
 
+<h2>Coauthors</h2>
+
+<ol>
+<% for coauthorship in @author.coauthorships.sort_by(&:articles_count).reverse -%>
+  <li><%= link_to coauthorship.coauthor.full_name, coauthorship.coauthor %>[<%= coauthorship.articles_count %>]</li>
+<% end -%>
+</ol>
+
+<h2>Articles-Coauthors Matrix</h2>
+
+<table>
+  <tr>
+    <th>Coauthor</th>
+<% for authorship in @author.authorships -%>
+    <th><%= @author.last_name %><%= link_to @author.authorships.index(authorship) + 1, authorship.article %></th>
+<% end -%>
+  </tr>
+<% for coauthorship in @author.coauthorships.sort_by(&:articles_count).reverse -%>
+  <tr>
+    <td><%= link_to coauthorship.coauthor.full_name, coauthorship.coauthor %></td>
+  <% for authorship in @author.authorships -%>
+    <td class="<%= authorship.article.authorships.map {|a| a.author_id }.include?(coauthorship.coauthor.id) ? "match" : "" %>">&nbsp;</td>
+  <% end -%>    
+  </tr>
+<% end -%>
+</table>
 <%= timestamps(@author) %>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
