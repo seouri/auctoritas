@@ -1,0 +1,33 @@
+<p>
+  <b>Article:</b>
+  <%=h @authorship.article_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%=h @authorship.position %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @authorship.last_name %>
+</p>
+
+<p>
+  <b>Fore name:</b>
+  <%=h @authorship.fore_name %>
+</p>
+
+<p>
+  <b>Initials:</b>
+  <%=h @authorship.initials %>
+</p>
+
+<p>
+  <b>Suffix:</b>
+  <%=h @authorship.suffix %>
+</p>
+
+
+<%= link_to 'Edit', edit_authorship_path(@authorship) %> |
+<%= link_to 'Back', authorships_path %>

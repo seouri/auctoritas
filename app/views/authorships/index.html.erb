@@ -1,0 +1,30 @@
+<h1>Listing authorships</h1>
+
+<table>
+  <tr>
+    <th>Article</th>
+    <th>Position</th>
+    <th>Last name</th>
+    <th>Fore name</th>
+    <th>Initials</th>
+    <th>Suffix</th>
+  </tr>
+
+<% for authorship in @authorships %>
+  <tr>
+    <td><%=h authorship.article_id %></td>
+    <td><%=h authorship.position %></td>
+    <td><%=h authorship.last_name %></td>
+    <td><%=h authorship.fore_name %></td>
+    <td><%=h authorship.initials %></td>
+    <td><%=h authorship.suffix %></td>
+    <td><%= link_to 'Show', authorship %></td>
+    <td><%= link_to 'Edit', edit_authorship_path(authorship) %></td>
+    <td><%= link_to 'Destroy', authorship, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New authorship', new_authorship_path %>

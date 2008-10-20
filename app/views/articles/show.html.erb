@@ -1,4 +1,9 @@
 <h1><%= @article.title %></h1>
 <%= citation(@article) %>
+<ul>
+<% for authorship in @article.authorships -%>
+  <li><%= "#{authorship.last_name} #{authorship.initials}" %></li>
+<% end -%>
+</ul>
 <%= timestamps(@article) %>
 <%= link_to 'Back', articles_path %>

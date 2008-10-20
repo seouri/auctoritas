@@ -1,0 +1,35 @@
+<h1>New authorship</h1>
+
+<% form_for(@authorship) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :article_id %><br />
+    <%= f.text_field :article_id %>
+  </p>
+  <p>
+    <%= f.label :position %><br />
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :fore_name %><br />
+    <%= f.text_field :fore_name %>
+  </p>
+  <p>
+    <%= f.label :initials %><br />
+    <%= f.text_field :initials %>
+  </p>
+  <p>
+    <%= f.label :suffix %><br />
+    <%= f.text_field :suffix %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', authorships_path %>
