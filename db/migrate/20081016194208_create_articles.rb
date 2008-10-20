@@ -7,6 +7,7 @@ class CreateArticles < ActiveRecord::Migration
       t.string :issue
       t.string :pagination
       t.text :title
+      t.timestamps
     end
   end
 

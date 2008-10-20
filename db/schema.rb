@@ -12,12 +12,14 @@
 ActiveRecord::Schema.define(:version => 20081016194208) do
 
   create_table "articles", :force => true do |t|
-    t.string  "journal"
-    t.integer "year"
-    t.string  "volume"
-    t.string  "issue"
-    t.string  "pagination"
-    t.text    "title"
+    t.string   "journal"
+    t.integer  "year"
+    t.string   "volume"
+    t.string   "issue"
+    t.string   "pagination"
+    t.text     "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
