@@ -1,5 +1,6 @@
 class Author < ActiveRecord::Base
   has_many :authorships, :include => :article
+  has_many :articles, :through => :authorships
   has_many :coauthorships, :include => :coauthor
   
   def self.search(query, options = {})
