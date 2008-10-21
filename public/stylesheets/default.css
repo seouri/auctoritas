@@ -11,9 +11,17 @@
 	text-align: right;
 }
 
-.match {
+.has_common_coauthor {
   background-color: #090;
+  color: #fff;
+  text-align: center;
 }
+
+.no_common_coauthor {
+  color: #fff;
+  border: 1px solid #ccc;
+}
+
 /* pagination */
 
 .pagination {

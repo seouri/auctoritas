@@ -16,24 +16,9 @@
 <% end -%>
 </ol>
 
-<h2>Articles-Coauthors Matrix</h2>
+<h2>Common-Coauthor Matrix</h2>
+<%= coauthor_matrix(@author) %>
 
-<table>
-  <tr>
-    <th>Coauthor</th>
-<% for authorship in @author.authorships -%>
-    <th><%= @author.last_name %><%= link_to @author.authorships.index(authorship) + 1, authorship.article %></th>
-<% end -%>
-  </tr>
-<% for coauthorship in @author.coauthorships.sort_by(&:articles_count).reverse -%>
-  <tr>
-    <td><%= link_to coauthorship.coauthor.full_name, coauthorship.coauthor %></td>
-  <% for authorship in @author.authorships -%>
-    <td class="<%= authorship.article.authorships.map {|a| a.author_id }.include?(coauthorship.coauthor.id) ? "match" : "" %>">&nbsp;</td>
-  <% end -%>    
-  </tr>
-<% end -%>
-</table>
 <%= timestamps(@author) %>
 
 <%= link_to 'Edit', edit_author_path(@author) %> |
