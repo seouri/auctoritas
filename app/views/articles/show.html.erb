@@ -2,11 +2,11 @@
 
 <%= citation(@article) %>
 
-<ul>
+<ol>
 <% for authorship in @article.authorships -%>
   <li><%= link_to authorship.author.full_name, authorship.author %></li>
 <% end -%>
-</ul>
+</ol>
 
 <%= timestamps(@article) %>
 
