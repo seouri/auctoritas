@@ -2,7 +2,8 @@ class AuthorsController < ApplicationController
   # GET /authors
   # GET /authors.xml
   def index
-    @authors = Author.search(params[:q], :page => params[:page])
+    total_entries = Author.total_entries if params[:q].blank?
+    @authors = Author.search(params[:q], :page => params[:page], :total_entries => total_entries)
 
     respond_to do |format|
       format.html # index.html.erb
