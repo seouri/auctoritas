@@ -7,4 +7,8 @@ class Article < ActiveRecord::Base
     options[:page] ||= 1
     paginate options
   end
+  
+  def self.total_entries
+    Rails.cache.fetch("total_articles_cached") { count('id') }
+  end
 end

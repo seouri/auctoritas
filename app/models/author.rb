@@ -9,7 +9,11 @@ class Author < ActiveRecord::Base
     options[:page] ||= 1
     paginate options
   end
-  
+
+  def self.total_entries
+    Rails.cache.fetch("total_authors_cached") { count('id') }
+  end
+    
   def full_name
     "#{last_name}, #{fore_name}"
   end
