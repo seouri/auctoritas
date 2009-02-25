@@ -1,0 +1,7 @@
+= Auctoritas: Open Authority Control Project for MEDLINE & everything else
+
+== Development
+
+* Source code: http://github.com/seouri/auctoritas
+* Mailing list: http://groups.google.com/group/authorid
+* Bug reports: http://authorid.lighthouseapp.com/projects/26110-auctoritas
