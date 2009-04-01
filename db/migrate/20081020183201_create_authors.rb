@@ -5,7 +5,7 @@ class CreateAuthors < ActiveRecord::Migration
       t.string :fore_name
       t.string :initials
       t.string :suffix
-      t.integer :articles_count
+      t.integer :articles_count, :default => 0
       t.timestamps
     end
   end

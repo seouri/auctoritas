@@ -12,22 +12,27 @@
 ActiveRecord::Schema.define(:version => 20081020220029) do
 
   create_table "articles", :force => true do |t|
-    t.string   "journal"
+    t.integer  "journal_id"
     t.integer  "year"
     t.string   "volume"
     t.string   "issue"
-    t.string   "pagination"
+    t.string   "pages"
     t.text     "title"
+    t.string   "doi"
+    t.integer  "authorships_count",          :default => 0
+    t.integer  "verified_authorships_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "articles", ["doi"], :name => "index_articles_on_doi"
 
   create_table "authors", :force => true do |t|
     t.string   "last_name"
     t.string   "fore_name"
     t.string   "initials"
     t.string   "suffix"
-    t.integer  "articles_count"
+    t.integer  "articles_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20081020220029) do
     t.string   "fore_name"
     t.string   "initials"
     t.string   "suffix"
+    t.string   "email"
+    t.string   "affiliation"
+    t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

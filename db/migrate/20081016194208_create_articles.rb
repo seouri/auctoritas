@@ -8,8 +8,8 @@ class CreateArticles < ActiveRecord::Migration
       t.string :pages
       t.text :title
       t.string :doi
-      t.integer :authorships_count
-      t.integer :verified_authorships_count
+      t.integer :authorships_count, :default => 0
+      t.integer :verified_authorships_count, :default => 0
       t.timestamps
     end
     add_index :articles, :doi
