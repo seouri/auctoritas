@@ -1,7 +1,7 @@
 class CreateArticles < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
-      t.string :journal
+      t.integer :journal_id
       t.integer :year
       t.string :volume
       t.string :issue
