@@ -7,6 +7,8 @@ class CreateArticles < ActiveRecord::Migration
       t.string :issue
       t.string :pages
       t.text :title
+      t.integer :authorships_count
+      t.integer :verified_authorships_count
       t.timestamps
     end
   end
