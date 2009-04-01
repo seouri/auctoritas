@@ -7,13 +7,16 @@ class CreateArticles < ActiveRecord::Migration
       t.string :issue
       t.string :pages
       t.text :title
+      t.string :doi
       t.integer :authorships_count
       t.integer :verified_authorships_count
       t.timestamps
     end
+    add_index :articles, :doi
   end
 
   def self.down
+    remove_index :articles, :doi
     drop_table :articles
   end
 end
