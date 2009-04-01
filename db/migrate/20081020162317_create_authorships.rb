@@ -8,6 +8,9 @@ class CreateAuthorships < ActiveRecord::Migration
       t.string :fore_name
       t.string :initials
       t.string :suffix
+      t.string :email
+      t.string :affiliation
+      t.integer :updated_by
       t.timestamps
     end
     add_index :authorships, :article_id
