@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :year
       t.string :volume
       t.string :issue
-      t.string :pagination
+      t.string :pages
       t.text :title
       t.timestamps
     end
