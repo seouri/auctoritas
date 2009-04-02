@@ -10,6 +10,7 @@ class CreateAuthorships < ActiveRecord::Migration
       t.string :suffix
       t.string :email
       t.string :affiliation
+      t.boolean :verified, :default => false
       t.integer :updated_by
       t.timestamps
     end

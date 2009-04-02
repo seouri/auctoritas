@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20090402181914) do
     t.string   "suffix"
     t.string   "email"
     t.string   "affiliation"
+    t.boolean  "verified",    :default => false
     t.integer  "updated_by"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -58,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20090402181914) do
   create_table "coauthorships", :force => true do |t|
     t.integer "author_id"
     t.integer "coauthor_id"
-    t.integer "articles_count"
+    t.integer "articles_count", :default => 0
   end
 
   add_index "coauthorships", ["author_id"], :name => "index_coauthorships_on_author_id"
@@ -66,8 +67,11 @@ ActiveRecord::Schema.define(:version => 20090402181914) do
   create_table "groups", :force => true do |t|
     t.integer  "owner_id"
     t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "groups", ["owner_id"], :name => "index_groups_on_owner_id"
 
 end
