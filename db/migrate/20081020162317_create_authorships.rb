@@ -4,10 +4,10 @@ class CreateAuthorships < ActiveRecord::Migration
       t.integer :article_id
       t.integer :author_id
       t.integer :position
-      t.string :last_name
-      t.string :fore_name
-      t.string :initials
-      t.string :suffix
+      t.integer :lastname_id
+      t.integer :forename_id
+      t.integer :initial_id
+      t.integer :suffix_id
       t.string :email
       t.string :affiliation
       t.boolean :verified, :default => false
