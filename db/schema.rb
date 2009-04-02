@@ -106,6 +106,8 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.string "name"
   end
 
+  add_index "lastnames", ["name"], :name => "index_lastnames_on_name"
+
   create_table "suffixes", :force => true do |t|
     t.string "name"
   end
