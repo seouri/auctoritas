@@ -83,12 +83,11 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
   end
 
   create_table "journals", :force => true do |t|
-    t.string   "name"
-    t.string   "abbreviation"
-    t.string   "issn"
-    t.string   "essn"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "name"
+    t.string  "abbreviation"
+    t.string  "issn"
+    t.string  "essn"
+    t.integer "articles_count", :default => 0
   end
 
   create_table "lastnames", :force => true do |t|

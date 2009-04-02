@@ -5,8 +5,7 @@ class CreateJournals < ActiveRecord::Migration
       t.string :abbreviation
       t.string :issn
       t.string :essn
-
-      t.timestamps
+      t.integer :articles_count, :default => 0
     end
   end
 
