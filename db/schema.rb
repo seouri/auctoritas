@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20081020220029) do
+ActiveRecord::Schema.define(:version => 20090402181914) do
 
   create_table "articles", :force => true do |t|
     t.integer  "journal_id"
@@ -62,5 +62,12 @@ ActiveRecord::Schema.define(:version => 20081020220029) do
   end
 
   add_index "coauthorships", ["author_id"], :name => "index_coauthorships_on_author_id"
+
+  create_table "groups", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
