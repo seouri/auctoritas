@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @journal.name %>
+</p>
+
+<p>
+  <b>Abbreviation:</b>
+  <%=h @journal.abbreviation %>
+</p>
+
+<p>
+  <b>Issn:</b>
+  <%=h @journal.issn %>
+</p>
+
+<p>
+  <b>Essn:</b>
+  <%=h @journal.essn %>
+</p>
+
+
+<%= link_to 'Edit', edit_journal_path(@journal) %> |
+<%= link_to 'Back', journals_path %>

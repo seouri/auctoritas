@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  abbreviation: MyString
+  issn: MyString
+  essn: MyString
+
+two:
+  name: MyString
+  abbreviation: MyString
+  issn: MyString
+  essn: MyString

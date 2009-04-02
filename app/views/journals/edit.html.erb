@@ -1,0 +1,28 @@
+<h1>Editing journal</h1>
+
+<% form_for(@journal) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :abbreviation %><br />
+    <%= f.text_field :abbreviation %>
+  </p>
+  <p>
+    <%= f.label :issn %><br />
+    <%= f.text_field :issn %>
+  </p>
+  <p>
+    <%= f.label :essn %><br />
+    <%= f.text_field :essn %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @journal %> |
+<%= link_to 'Back', journals_path %>
