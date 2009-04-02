@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090402181914) do
+ActiveRecord::Schema.define(:version => 20090402211313) do
 
   create_table "articles", :force => true do |t|
     t.integer  "journal_id"
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(:version => 20090402181914) do
 
   add_index "coauthorships", ["author_id"], :name => "index_coauthorships_on_author_id"
 
+  create_table "forenames", :force => true do |t|
+    t.string "name"
+  end
+
   create_table "groups", :force => true do |t|
     t.integer  "owner_id"
     t.string   "name"
@@ -73,5 +77,30 @@ ActiveRecord::Schema.define(:version => 20090402181914) do
   end
 
   add_index "groups", ["owner_id"], :name => "index_groups_on_owner_id"
+
+  create_table "initials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "journals", :force => true do |t|
+    t.string   "name"
+    t.string   "abbreviation"
+    t.string   "issn"
+    t.string   "essn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "lastnames", :force => true do |t|
+    t.string "name"
+  end
+
+  create_table "suffixes", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
