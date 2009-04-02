@@ -79,9 +79,7 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
   add_index "groups", ["owner_id"], :name => "index_groups_on_owner_id"
 
   create_table "initials", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
   create_table "journals", :force => true do |t|
@@ -98,9 +96,7 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
   end
 
   create_table "suffixes", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string "name"
   end
 
 end
