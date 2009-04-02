@@ -3,6 +3,7 @@ class CreateForenames < ActiveRecord::Migration
     create_table :forenames do |t|
       t.string :name
     end
+    add_index :forenames, :name
   end
 
   def self.down

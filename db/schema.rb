@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.string "name"
   end
 
+  add_index "forenames", ["name"], :name => "index_forenames_on_name"
+
   create_table "groups", :force => true do |t|
     t.integer  "owner_id"
     t.string   "name"
