@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.string "name"
   end
 
+  add_index "initials", ["name"], :name => "index_initials_on_name"
+
   create_table "journals", :force => true do |t|
     t.string  "name"
     t.string  "abbreviation"

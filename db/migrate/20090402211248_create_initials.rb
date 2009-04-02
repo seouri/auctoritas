@@ -3,6 +3,7 @@ class CreateInitials < ActiveRecord::Migration
     create_table :initials do |t|
       t.string :name
     end
+    add_index :initials, :name
   end
 
   def self.down
