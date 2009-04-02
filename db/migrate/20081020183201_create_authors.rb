@@ -8,6 +8,8 @@ class CreateAuthors < ActiveRecord::Migration
       t.integer :articles_count, :default => 0
       t.timestamps
     end
+    add_index :authors, [:lastname_id, :forename_id]
+    add_index :authors, [:lastname_id, :initial_id]
   end
 
   def self.down

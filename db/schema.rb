@@ -38,6 +38,9 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.datetime "updated_at"
   end
 
+  add_index "authors", ["lastname_id", "forename_id"], :name => "index_authors_on_lastname_id_and_forename_id"
+  add_index "authors", ["lastname_id", "initial_id"], :name => "index_authors_on_lastname_id_and_initial_id"
+
   create_table "authorships", :force => true do |t|
     t.integer  "article_id"
     t.integer  "author_id"
