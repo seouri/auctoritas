@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
 
   add_index "authorships", ["article_id"], :name => "index_authorships_on_article_id"
   add_index "authorships", ["author_id"], :name => "index_authorships_on_author_id"
+  add_index "authorships", ["lastname_id", "forename_id"], :name => "index_authorships_on_lastname_id_and_forename_id"
+  add_index "authorships", ["lastname_id", "initial_id"], :name => "index_authorships_on_lastname_id_and_initial_id"
+  add_index "authorships", ["verifier_id"], :name => "index_authorships_on_verifier_id"
 
   create_table "coauthorships", :force => true do |t|
     t.integer "author_id"

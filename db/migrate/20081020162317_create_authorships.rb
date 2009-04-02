@@ -16,9 +16,13 @@ class CreateAuthorships < ActiveRecord::Migration
     end
     add_index :authorships, :article_id
     add_index :authorships, :author_id
+    add_index :authorships, :verifier_id
+    add_index :authorships, [:lastname_id, :forename_id]
+    add_index :authorships, [:lastname_id, :initial_id]
   end
 
   def self.down
+    remove_index :authorships, :las
     drop_table :authorships
   end
 end
