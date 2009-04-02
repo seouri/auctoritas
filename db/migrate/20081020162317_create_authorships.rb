@@ -11,7 +11,7 @@ class CreateAuthorships < ActiveRecord::Migration
       t.string :email
       t.string :affiliation
       t.boolean :verified, :default => false
-      t.integer :updated_by
+      t.integer :verifier_id, :default => 0
       t.timestamps
     end
     add_index :authorships, :article_id

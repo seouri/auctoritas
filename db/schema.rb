@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.string   "email"
     t.string   "affiliation"
     t.boolean  "verified",    :default => false
-    t.integer  "updated_by"
+    t.integer  "verifier_id", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
