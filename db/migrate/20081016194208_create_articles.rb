@@ -12,10 +12,12 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :verified_authorships_count, :default => 0
       t.timestamps
     end
+    add_index :articles, :journal_id
     add_index :articles, :doi
   end
 
   def self.down
+    remove_index :articles, :journal_id
     remove_index :articles, :doi
     drop_table :articles
   end

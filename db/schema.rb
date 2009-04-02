@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
   end
 
   add_index "articles", ["doi"], :name => "index_articles_on_doi"
+  add_index "articles", ["journal_id"], :name => "index_articles_on_journal_id"
 
   create_table "authors", :force => true do |t|
     t.integer  "lastname_id"
