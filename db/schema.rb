@@ -116,4 +116,6 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.string "name"
   end
 
+  add_index "suffixes", ["name"], :name => "index_suffixes_on_name"
+
 end
