@@ -97,6 +97,11 @@ ActiveRecord::Schema.define(:version => 20090402211313) do
     t.integer "articles_count", :default => 0
   end
 
+  add_index "journals", ["abbreviation"], :name => "index_journals_on_abbreviation"
+  add_index "journals", ["essn"], :name => "index_journals_on_essn"
+  add_index "journals", ["issn"], :name => "index_journals_on_issn"
+  add_index "journals", ["name"], :name => "index_journals_on_name"
+
   create_table "lastnames", :force => true do |t|
     t.string "name"
   end
