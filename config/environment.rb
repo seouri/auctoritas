@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :version => '~> 2.3.8', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem "rspec", :lib => false, :version => ">= 1.2.2" 
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.2"
+  config.gem "authlogic", :version => ">= 2.0.5"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
