@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :version => '~> 2.3.8', :lib => 'will_paginate', :source => 'http://gems.github.com'
   config.gem "rspec", :lib => false, :version => ">= 1.2.2" 
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.2"
+  config.gem "ruby-openid", :version => ">= 2.1.4", :lib => "openid"
   config.gem "authlogic", :version => ">= 2.0.5"
   config.gem "authlogic-oid", :version => ">= 1.0.2", :lib => "authlogic_openid"
 
