@@ -71,3 +71,9 @@
   *:first-child+html .pagination {
     overflow: hidden; }
 
+#user_session_openid_identifier,
+#user_openid_identifier {
+  background: url('/images/openid-16x16.gif') no-repeat;
+  background: url('/images/openid-16x16.gif') no-repeat scroll 0pt 50%;
+  padding-left: 18px;
+}

@@ -1,0 +1,31 @@
+<% if @user.openid_identifier.blank? %>
+  <p>
+    <b>email:</b>
+    <%=h @user.email %>
+  </p>
+<% else %>
+  <p>
+    <b>OpenID:</b>
+    <%= link_to @user.openid_identifier, @user.openid_identifier %>
+  </p>
+<% end %>
+
+<p>
+  <b>Login count:</b>
+  <%=h @user.login_count %>
+</p>
+
+<p>
+  <b>Last request at:</b>
+  <%=h @user.last_request_at %>
+</p>
+
+<p>
+  <b>Last login at:</b> <%=h @user.last_login_at %> from <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>Current login at:</b> <%=h @user.current_login_at %> from <%=h @user.current_login_ip %>
+</p>
+
+<%= link_to 'Edit', edit_account_path %>

@@ -1,0 +1,15 @@
+<div id="login_container"<% unless @user.openid_identifier.blank? %> style="display: none;"<% end %>>
+  <%= form.label :email %> (or <%= link_to_function "use OpenID", "$('login_container').toggle(); $('openid_container').toggle();" %>)<br />
+  <%= form.text_field :email %><br />
+  <br />
+  <%= form.label :password, form.object.new_record? ? nil : "Change password" %><br />
+  <%= form.password_field :password %><br />
+  <br />
+  <%= form.label :password_confirmation %><br />
+  <%= form.password_field :password_confirmation %><br />
+</div><!-- #login_container -->
+<div id="openid_container"<% if @user.openid_identifier.blank? %> style="display: none;"<% end %>>
+  <%= form.label :openid_identifier, "OpenID" %> (or <%= link_to_function "use email / password", "$('login_container').toggle(); $('openid_container').toggle();" %>)<br />
+  <%= form.text_field :openid_identifier, :class => "openid" %><br />
+</div><!-- #openid_container -->
+<br />

@@ -5,12 +5,18 @@
   <title>Auctoritas &mdash; Open Authority Control for PubMed&#174;</title>
   <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset-fonts-grids/reset-fonts-grids.css&2.7.0/build/base/base-min.css">
   <%= stylesheet_link_tag 'default' %>
+  <%= javascript_include_tag 'prototype' %>
 </head>
 <body>
 <div id="doc4" class="yui-t7">
   <div id="hd">Auctoritas &mdash; Open Authority Control for PubMed&#174;</div>
   <div id="bd">
     <div class="yui-g">
+    <% if current_user %>
+      <%= link_to "My Account", account_path %> |
+      <%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>
+    <% end %>
+    <p style="color: green"><%= flash[:notice] %></p>
 <%= yield %>
     </div><!-- .yui-g -->
   </div><!-- #bd -->
