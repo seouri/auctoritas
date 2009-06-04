@@ -12,17 +12,9 @@
     <%= f.text_field :abbreviation %>
   </p>
   <p>
-    <%= f.label :issn %><br />
-    <%= f.text_field :issn %>
-  </p>
-  <p>
-    <%= f.label :essn %><br />
-    <%= f.text_field :essn %>
-  </p>
-  <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
 <%= link_to 'Show', @journal %> |
-<%= link_to 'Back', journals_path %>
+<%= link_to 'Journals', journals_path %>
