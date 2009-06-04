@@ -4,10 +4,11 @@
 
 <ol>
 <% for authorship in @article.authorships -%>
-  <li><%= link_to authorship.author.full_name, authorship.author %></li>
+  <li><%= link_to authorship.fullname, authorship %></li>
 <% end -%>
 </ol>
 
 <%= timestamps(@article) %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Articles', articles_path %> |
+<%= link_to 'Add an article', new_article_path %>

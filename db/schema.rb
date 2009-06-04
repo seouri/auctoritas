@@ -12,6 +12,8 @@
 ActiveRecord::Schema.define(:version => 20090403155424) do
 
   create_table "articles", :force => true do |t|
+    t.string   "source"
+    t.string   "source_id"
     t.integer  "journal_id"
     t.integer  "year"
     t.string   "volume"
@@ -27,28 +29,29 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
 
   add_index "articles", ["doi"], :name => "index_articles_on_doi"
   add_index "articles", ["journal_id"], :name => "index_articles_on_journal_id"
+  add_index "articles", ["source", "source_id"], :name => "index_articles_on_source_and_source_id", :unique => true
 
   create_table "authors", :force => true do |t|
-    t.integer  "lastname_id"
-    t.integer  "forename_id"
-    t.integer  "initial_id"
-    t.integer  "suffix_id"
+    t.string   "lastname"
+    t.string   "forename"
+    t.string   "initial"
+    t.string   "suffix"
     t.integer  "articles_count", :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "authors", ["lastname_id", "forename_id"], :name => "index_authors_on_lastname_id_and_forename_id"
-  add_index "authors", ["lastname_id", "initial_id"], :name => "index_authors_on_lastname_id_and_initial_id"
+  add_index "authors", ["lastname", "forename"], :name => "index_authors_on_lastname_and_forename"
+  add_index "authors", ["lastname", "initial"], :name => "index_authors_on_lastname_and_initial"
 
   create_table "authorships", :force => true do |t|
     t.integer  "article_id"
     t.integer  "author_id"
     t.integer  "position"
-    t.integer  "lastname_id"
-    t.integer  "forename_id"
-    t.integer  "initial_id"
-    t.integer  "suffix_id"
+    t.string   "lastname"
+    t.string   "forename"
+    t.string   "initials"
+    t.string   "suffix"
     t.string   "email"
     t.string   "affiliation"
     t.boolean  "verified",    :default => false
@@ -59,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
 
   add_index "authorships", ["article_id"], :name => "index_authorships_on_article_id"
   add_index "authorships", ["author_id"], :name => "index_authorships_on_author_id"
-  add_index "authorships", ["lastname_id", "forename_id"], :name => "index_authorships_on_lastname_id_and_forename_id"
-  add_index "authorships", ["lastname_id", "initial_id"], :name => "index_authorships_on_lastname_id_and_initial_id"
+  add_index "authorships", ["lastname", "forename"], :name => "index_authorships_on_lastname_and_forename"
+  add_index "authorships", ["lastname", "initials"], :name => "index_authorships_on_lastname_and_initials"
   add_index "authorships", ["verifier_id"], :name => "index_authorships_on_verifier_id"
 
   create_table "coauthorships", :force => true do |t|
@@ -96,15 +99,10 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
   create_table "journals", :force => true do |t|
     t.string  "name"
     t.string  "abbreviation"
-    t.string  "issn"
-    t.string  "essn"
     t.integer "articles_count", :default => 0
   end
 
-  add_index "journals", ["abbreviation"], :name => "index_journals_on_abbreviation"
-  add_index "journals", ["essn"], :name => "index_journals_on_essn"
-  add_index "journals", ["issn"], :name => "index_journals_on_issn"
-  add_index "journals", ["name"], :name => "index_journals_on_name"
+  add_index "journals", ["name", "abbreviation"], :name => "index_journals_on_name_and_abbreviation", :unique => true
 
   create_table "lastnames", :force => true do |t|
     t.string "name"

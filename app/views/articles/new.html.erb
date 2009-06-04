@@ -1,35 +1,5 @@
 <h1>New article</h1>
 
-<% form_for(@article) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :journal %><br />
-    <%= f.text_field :journal %>
-  </p>
-  <p>
-    <%= f.label :year %><br />
-    <%= f.text_field :year %>
-  </p>
-  <p>
-    <%= f.label :volume %><br />
-    <%= f.text_field :volume %>
-  </p>
-  <p>
-    <%= f.label :issue %><br />
-    <%= f.text_field :issue %>
-  </p>
-  <p>
-    <%= f.label :pagination %><br />
-    <%= f.text_field :pagination %>
-  </p>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
-<% end %>
+<%= render :partial => 'form' %>
 
 <%= link_to 'Back', articles_path %>

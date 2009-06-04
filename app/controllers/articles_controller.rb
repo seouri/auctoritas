@@ -26,6 +26,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
+    @article.update_from_pubmed(params[:id]) if params[:id]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -82,5 +83,10 @@ class ArticlesController < ApplicationController
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def pubmed
+    @article = Article.new
+    @article.update_from_pubmed(params[:id]) if params[:id]
   end
 end

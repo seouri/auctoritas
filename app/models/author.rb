@@ -15,6 +15,6 @@ class Author < ActiveRecord::Base
   end
     
   def full_name
-    "#{last_name}, #{fore_name}"
+    "#{lastname}, #{forename}"
   end
 end

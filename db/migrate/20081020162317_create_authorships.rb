@@ -4,10 +4,10 @@ class CreateAuthorships < ActiveRecord::Migration
       t.integer :article_id
       t.integer :author_id
       t.integer :position
-      t.integer :lastname_id
-      t.integer :forename_id
-      t.integer :initial_id
-      t.integer :suffix_id
+      t.string :lastname
+      t.string :forename
+      t.string :initials
+      t.string :suffix
       t.string :email
       t.string :affiliation
       t.boolean :verified, :default => false
@@ -17,12 +17,11 @@ class CreateAuthorships < ActiveRecord::Migration
     add_index :authorships, :article_id
     add_index :authorships, :author_id
     add_index :authorships, :verifier_id
-    add_index :authorships, [:lastname_id, :forename_id]
-    add_index :authorships, [:lastname_id, :initial_id]
+    add_index :authorships, [:lastname, :forename]
+    add_index :authorships, [:lastname, :initials]
   end
 
   def self.down
-    remove_index :authorships, :las
     drop_table :authorships
   end
 end

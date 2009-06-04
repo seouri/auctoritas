@@ -1,0 +1,4 @@
+<li>
+  <%= f.hidden_field :position %>
+  <%= f.text_field :forename, :size => 10 %><%= f.text_field :lastname, :size => 15 %><%= f.text_field(:affiliation) unless :affiliation.blank? %>
+</li>

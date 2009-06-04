@@ -1,15 +1,15 @@
 class CreateAuthors < ActiveRecord::Migration
   def self.up
     create_table :authors do |t|
-      t.integer :lastname_id
-      t.integer :forename_id
-      t.integer :initial_id
-      t.integer :suffix_id
+      t.string :lastname
+      t.string :forename
+      t.string :initial
+      t.string :suffix
       t.integer :articles_count, :default => 0
       t.timestamps
     end
-    add_index :authors, [:lastname_id, :forename_id]
-    add_index :authors, [:lastname_id, :initial_id]
+    add_index :authors, [:lastname, :forename]
+    add_index :authors, [:lastname, :initial]
   end
 
   def self.down

@@ -1,6 +1,8 @@
 class CreateArticles < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
+      t.string :source
+      t.string :source_id
       t.integer :journal_id
       t.integer :year
       t.string :volume
@@ -14,11 +16,10 @@ class CreateArticles < ActiveRecord::Migration
     end
     add_index :articles, :journal_id
     add_index :articles, :doi
+    add_index :articles, [:source, :source_id], :unique => true
   end
 
   def self.down
-    remove_index :articles, :journal_id
-    remove_index :articles, :doi
     drop_table :articles
   end
 end

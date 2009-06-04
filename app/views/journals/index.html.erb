@@ -4,16 +4,12 @@
   <tr>
     <th>Name</th>
     <th>Abbreviation</th>
-    <th>Issn</th>
-    <th>Essn</th>
   </tr>
 
 <% @journals.each do |journal| %>
   <tr>
     <td><%=h journal.name %></td>
     <td><%=h journal.abbreviation %></td>
-    <td><%=h journal.issn %></td>
-    <td><%=h journal.essn %></td>
     <td><%= link_to 'Show', journal %></td>
     <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
     <td><%= link_to 'Destroy', journal, :confirm => 'Are you sure?', :method => :delete %></td>

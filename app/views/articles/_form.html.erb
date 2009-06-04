@@ -1,0 +1,63 @@
+<% form_for(@article) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :source %><br />
+    <%= f.text_field :source %>
+  </p>
+  <p>
+    <%= f.label :source_id %><br />
+    <%= f.text_field :source_id %>
+  </p>
+  <div id="journal">
+  <%= f.hidden_field :journal_id %>
+<% @article.build_journal unless @article.journal -%>
+<% f.fields_for :journal do |journal_form| -%>
+<%= journal_form.hidden_field :id %>
+    <p>
+      <%= journal_form.label :name, "Journal Name" %><br />
+      <%= journal_form.text_field :name %>
+    </p>
+    <p>
+      <%= journal_form.label :abbreviation, "Journal Abbreviation" %><br />
+      <%= journal_form.text_field :abbreviation %>
+    </p>
+<% end -%>
+  </div><!-- #journal -->
+  <p>
+    <%= f.label :year %><br />
+    <%= f.text_field :year, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :volume %><br />
+    <%= f.text_field :volume, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :issue %><br />
+    <%= f.text_field :issue, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :pages %><br />
+    <%= f.text_field :pages, :size => 4 %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :size => 80 %>
+  </p>
+  <p>
+    <%= f.label :doi %><br />
+    <%= f.text_field :doi %>
+  </p>
+  <div id="authorships">
+    <ol>
+<% @article.build_authorships unless @article.authorships -%>
+<% f.fields_for :authorships do |authorship_form| -%>
+
+  <%= render :partial => 'authorship', :locals => { :f => authorship_form } %>
+
+<% end -%>
+    </ol>
+  </div><!-- #authorships -->
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
