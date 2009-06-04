@@ -2,7 +2,7 @@ module ArticlesHelper
   def citation(article)
     # http://en.wikipedia.org/wiki/Vancouver_system
     issue = article.issue.empty? ? "" : "(#{article.issue})"
-    citation = "#{article.journal.abbreviation}. #{article.year}"
+    citation = "#{link_to(article.journal.abbreviation, article.journal)}. #{article.year}"
     citation += ";#{article.volume}#{issue}" unless article.volume.blank?
     citation += ":#{article.pages}" unless article.pages.blank?
     citation += "."
