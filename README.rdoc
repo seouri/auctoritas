@@ -4,4 +4,4 @@
 
 * Source code: http://github.com/seouri/auctoritas
 * Mailing list: http://groups.google.com/group/authorid
-* Bug report and feature requests: http://authorid.lighthouseapp.com/projects/26110-auctoritas
+* Bug report and feature requests: http://github.com/seouri/auctoritas/issues
