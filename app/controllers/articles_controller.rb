@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
-    @article.update_from_pubmed(params[:id]) if params[:id]
+    @article.update_from_pubmed(params[:pmid]) if params[:pmid]
 
     respond_to do |format|
       format.html # new.html.erb

@@ -1,4 +1,8 @@
 <h1>New article</h1>
+<% form_tag new_article_path, :method => "get" do %>
+  <%= label_tag('pmid') %><br />
+  <%= text_field_tag 'pmid', params["pmid"] %>
+<% end -%>
 
 <%= render :partial => 'form' %>
 
