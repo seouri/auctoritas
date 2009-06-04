@@ -74,12 +74,6 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
 
   add_index "coauthorships", ["author_id"], :name => "index_coauthorships_on_author_id"
 
-  create_table "forenames", :force => true do |t|
-    t.string "name"
-  end
-
-  add_index "forenames", ["name"], :name => "index_forenames_on_name"
-
   create_table "groups", :force => true do |t|
     t.integer  "owner_id"
     t.string   "name"
@@ -90,12 +84,6 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
 
   add_index "groups", ["owner_id"], :name => "index_groups_on_owner_id"
 
-  create_table "initials", :force => true do |t|
-    t.string "name"
-  end
-
-  add_index "initials", ["name"], :name => "index_initials_on_name"
-
   create_table "journals", :force => true do |t|
     t.string  "name"
     t.string  "abbreviation"
@@ -103,12 +91,6 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
   end
 
   add_index "journals", ["name", "abbreviation"], :name => "index_journals_on_name_and_abbreviation", :unique => true
-
-  create_table "lastnames", :force => true do |t|
-    t.string "name"
-  end
-
-  add_index "lastnames", ["name"], :name => "index_lastnames_on_name"
 
   create_table "open_id_authentication_associations", :force => true do |t|
     t.integer "issued"
@@ -124,12 +106,6 @@ ActiveRecord::Schema.define(:version => 20090403155424) do
     t.string  "server_url"
     t.string  "salt",       :null => false
   end
-
-  create_table "suffixes", :force => true do |t|
-    t.string "name"
-  end
-
-  add_index "suffixes", ["name"], :name => "index_suffixes_on_name"
 
   create_table "users", :force => true do |t|
     t.string   "email"
