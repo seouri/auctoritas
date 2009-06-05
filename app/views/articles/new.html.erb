@@ -2,6 +2,7 @@
 <% form_tag new_article_path, :method => "get" do %>
   <%= label_tag('pmid') %><br />
   <%= text_field_tag 'pmid', params["pmid"] %>
+  <%= submit_tag "Import from PubMed" %>
 <% end -%>
 
 <%= render :partial => 'form' %>
