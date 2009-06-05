@@ -10,6 +10,12 @@
 	text-align: right;
 }
 
+.articles li {
+  margin: 0.5em 0;
+}
+.citation {
+  font-size: 85%;
+}
 .has_common_coauthor {
   background-color: #090;
   color: #fff;

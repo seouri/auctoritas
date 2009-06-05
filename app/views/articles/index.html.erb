@@ -2,7 +2,7 @@
 
 <ul class="articles">
 <% for article in @articles -%>
-  <li><div class="title"><%= link_to article.title, article %></div><%= citation(article) %></li>
+  <li><span class="title"><%= link_to article.title, article %></span><%= citation(article) %></li>
 <% end -%>
 </ul>
 
