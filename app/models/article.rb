@@ -23,6 +23,7 @@ class Article < ActiveRecord::Base
   end
 
   def update_from_pubmed(pmid)
+    return if pmid.blank?
     efetch = Bio::PubMed.efetch(pmid)
     medline = Bio::MEDLINE.new(efetch)
     self.source = "PubMed"
