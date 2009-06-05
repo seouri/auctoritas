@@ -18,7 +18,8 @@ class Article < ActiveRecord::Base
   end
   
   def self.total_entries
-    Rails.cache.fetch("total_articles_cached") { count('id') }
+    count('id') # TODO: expire on article create/delete
+    #Rails.cache.fetch("total_articles_cached") { count('id') }
   end
 
   def update_from_pubmed(pmid)
