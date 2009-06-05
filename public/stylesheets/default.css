@@ -82,3 +82,18 @@
   background: url('/images/openid-16x16.gif') no-repeat scroll 0pt 50%;
   padding-left: 18px;
 }
+
+.errorExplanation {
+  margin: 1em;
+  padding: 1em;
+  border: 0.25em solid #c00;
+}
+
+.fieldWithErrors {
+  color: #c00;
+  font-weight: bold;
+}
+
+.fieldWithErrors input {
+  background-color: #fcc;
+}

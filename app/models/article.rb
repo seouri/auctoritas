@@ -3,6 +3,11 @@ class Article < ActiveRecord::Base
   has_many :authorships
   has_many :authors, :through => :authorships
 
+  validates_associated :journal
+  validates_uniqueness_of :source_id, :scope => :source
+  validates_presence_of :title, :year
+  validates_format_of :year, :with => /\d{4}/
+
   accepts_nested_attributes_for :journal
   accepts_nested_attributes_for :authorships, :allow_destroy => true
   
