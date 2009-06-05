@@ -13,9 +13,18 @@
 .articles li {
   margin: 0.5em 0;
 }
+
 .citation {
   font-size: 85%;
 }
+
+#pubmed_import {
+  border: 1px solid #333;
+  width: 20em;
+  margin: 1em 0;
+  padding: 1em;
+}
+
 .has_common_coauthor {
   background-color: #090;
   color: #fff;

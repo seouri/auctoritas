@@ -1,12 +1,13 @@
+<% disabled = params[:pmid].blank? ? false: true %>
 <% form_for(@article) do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :source %><br />
-    <%= f.text_field :source %>
+    <%= f.text_field :source, :siez => 4, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :source_id %><br />
-    <%= f.text_field :source_id %>
+    <%= f.text_field :source_id, :size => 8, :disabled => disabled %>
   </p>
   <div id="journal">
   <%= f.hidden_field :journal_id %>
@@ -15,44 +16,44 @@
 <%= journal_form.hidden_field :id %>
     <p>
       <%= journal_form.label :name, "Journal Name" %><br />
-      <%= journal_form.text_field :name %>
+      <%= journal_form.text_field :name, :disabled => disabled %>
     </p>
     <p>
       <%= journal_form.label :abbreviation, "Journal Abbreviation" %><br />
-      <%= journal_form.text_field :abbreviation %>
+      <%= journal_form.text_field :abbreviation, :disabled => disabled %>
     </p>
 <% end -%>
   </div><!-- #journal -->
   <p>
     <%= f.label :year %><br />
-    <%= f.text_field :year, :size => 4 %>
+    <%= f.text_field :year, :size => 4, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :volume %><br />
-    <%= f.text_field :volume, :size => 4 %>
+    <%= f.text_field :volume, :size => 4, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :issue %><br />
-    <%= f.text_field :issue, :size => 4 %>
+    <%= f.text_field :issue, :size => 4, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :pages %><br />
-    <%= f.text_field :pages, :size => 4 %>
+    <%= f.text_field :pages, :size => 4, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title, :size => 80 %>
+    <%= f.text_field :title, :size => 80, :disabled => disabled %>
   </p>
   <p>
     <%= f.label :doi %><br />
-    <%= f.text_field :doi %>
+    <%= f.text_field :doi, :disabled => disabled %>
   </p>
   <div id="authorships">
     <ol>
 <% @article.build_authorships unless @article.authorships -%>
 <% f.fields_for :authorships do |authorship_form| -%>
 
-  <%= render :partial => 'authorship', :locals => { :f => authorship_form } %>
+  <%= render :partial => 'authorship', :locals => { :f => authorship_form, :disabled => disabled } %>
 
 <% end -%>
     </ol>
