@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
+  before_filter :set_iphone_format
 
   private
     def current_user_session
@@ -46,4 +47,13 @@ class ApplicationController < ActionController::Base
       session[:return_to] = nil
     end
 
+    def set_iphone_format
+      if is_iphone_request?
+        request.format = :iphone
+      end
+    end
+
+    def is_iphone_request?
+      request.user_agent =~ /(Mobile\/.+Safari)/
+    end
 end
