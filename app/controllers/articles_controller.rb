@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     total_entries = Article.total_entries if params[:q].blank?
-    @articles = Article.search(params[:q], :page => params[:page], :total_entries => total_entries)
+    @articles = Article.search(params[:q], :page => params[:page], :total_entries => total_entries, :include => :journal)
 
     respond_to do |format|
       format.html # index.html.erb
